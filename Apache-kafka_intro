@@ -1,0 +1,60 @@
+What Is Apache Kafka?
+Distributed Event Streaming Platform: Kafka is designed to handle high-throughput, low-latency data streams in real time.
+
+Use Cases: Ideal for building real-time data pipelines, event-driven architectures, and stream processing applications.
+
+🏗️ Kafka Architecture Overview
+1. Producer
+Role: Sends data (events/messages) to Kafka topics.
+
+Behavior: Producers can choose which partition within a topic to send messages to, often using a key-based partitioning strategy.
+
+2. Broker
+Role: A Kafka server that stores data and serves clients.
+
+Cluster Formation: Multiple brokers form a Kafka cluster, distributing data across them for scalability and fault tolerance.
+
+3. Topic
+Definition: A category or feed name to which records are sent by producers.
+
+Characteristics:
+
+Immutable Logs: Once data is written, it cannot be modified.
+
+Partitioned: Topics are split into partitions, allowing parallel processing.
+
+4. Partition
+Purpose: Enables Kafka to horizontally scale by distributing data across multiple brokers.
+
+Replication: Each partition can have multiple replicas across brokers to ensure data durability and availability.
+
+5. Consumer
+Role: Reads data from Kafka topics.
+
+Consumer Groups: Multiple consumers can form a group to share the consumption of topic partitions, allowing for load balancing and fault tolerance.
+
+6. ZooKeeper (Deprecated in newer versions)
+Function: Manages and coordinates Kafka brokers, handling tasks like leader election and metadata management.
+
+Note: Kafka is transitioning to a new architecture called KRaft (Kafka Raft Metadata Mode), which eliminates the need for ZooKeeper.
+
+🔄 Data Flow in Kafka
+Producer sends messages to a Topic.
+
+Messages are stored in Partitions within the topic.
+
+Consumers read messages from these partitions, either individually or as part of a Consumer Group.
+
+✅ Key Features of Kafka
+High Throughput: Capable of handling millions of messages per second.
+
+Scalability: Easily scales horizontally by adding more brokers.
+
+Durability: Ensures data is replicated and fault-tolerant.
+
+Real-Time Processing: Supports real-time data streaming and processing.
+
+🧩 Kafka Ecosystem Components
+Kafka Streams: A client library for building applications and microservices where the input and output data are stored in Kafka topics.
+
+Kafka Connect: A tool for scalably and reliably streaming data between Kafka and other systems.
